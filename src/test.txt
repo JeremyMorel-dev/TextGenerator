@@ -1,1 +1,1 @@
-Hello my name is John.
+Supposez à présent que vous ayez besoin de calculer la racine carrée d’un nombre dans le cadre d’un de vos notebooks. Il n’existe pas de fonction racine carrée native en Python. Vous pourriez naturellement l’écrire vous-même, mais hey, il y a sûrement eu un tas de personnes qui se sont déjà posé la même question. Et devinez quoi ? L’un d’eux a déjà écrit la fonction et l’a enregistrée dans un module !
