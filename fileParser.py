@@ -20,6 +20,9 @@ def parseText(fileName):
         elif '.' in currWord:
             parsedText.insert(len(parsedText)+1, currWord[:-1])
             parsedText.insert(len(parsedText)+2, '.')
+        elif ',' in currWord:
+            parsedText.insert(len(parsedText)+1, currWord[:-1])
+            parsedText.insert(len(parsedText)+2, ',')
         else:
             parsedText.insert(len(parsedText)+1, currWord)
     return parsedText
