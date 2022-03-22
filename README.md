@@ -1,1 +1,1 @@
-"# TextGenerator" 
+# TextGenerator
