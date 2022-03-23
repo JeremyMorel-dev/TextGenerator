@@ -14,17 +14,17 @@ def parseText(fileName):
             elif chr(39) in currWord:
                 wordToAdd = currWord.split(chr(39))
             print(wordToAdd)
-            parsedText.insert(len(parsedText)+1 , wordToAdd[0])
-            parsedText.insert(len(parsedText)+2, chr(39))
-            parsedText.insert(len(parsedText)+3, wordToAdd[1])
+            parsedText.append(wordToAdd[0])
+            parsedText.append(chr(39))
+            parsedText.append(wordToAdd[1])
         elif '.' in currWord:
-            parsedText.insert(len(parsedText)+1, currWord[:-1])
-            parsedText.insert(len(parsedText)+2, '.')
+            parsedText.append(currWord[:-1])
+            parsedText.append('.')
         elif ',' in currWord:
-            parsedText.insert(len(parsedText)+1, currWord[:-1])
-            parsedText.insert(len(parsedText)+2, ',')
+            parsedText.append(currWord[:-1])
+            parsedText.append(',')
         else:
-            parsedText.insert(len(parsedText)+1, currWord)
+            parsedText.append(currWord)
     return parsedText
 
 
