@@ -5,7 +5,6 @@ def parseText(fileName):
 
     for i in range(0, len(rawParsedText)):
         currWord = rawParsedText[i]
-        p = 1
         if (chr(8217) or chr(39)) in currWord:
             wordToAdd = []
             print(chr(8217) in currWord)
@@ -23,6 +22,13 @@ def parseText(fileName):
         elif ',' in currWord:
             parsedText.append(currWord[:-1])
             parsedText.append(',')
+        elif chr(34) in currWord:
+            if currWord[0] == chr(34):
+                parsedText.append(chr(34))
+                parsedText.append(currWord[1:])
+            elif currWord[-1] == chr(34):
+                parsedText.append(currWord[:-1])
+                parsedText.append(chr(34))
         else:
             parsedText.append(currWord)
     return parsedText
