@@ -4,6 +4,6 @@ from textEngine import TextEngine
 def main():
     engine = TextEngine()
     for word in engine.getWordList():
-        print(word.getWord())
+        print(word.getWord() + " " + str(word.getAppearanceAvg()) + "%")
 
 main()
