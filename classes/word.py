@@ -9,8 +9,8 @@ class Word:
     def getWord(self):
         return self._word
     
-    def getPrevWordAvg(sef):
+    def getPrevWordAvg(self):
         return self._prevWordsAvg
 
-    def getNextWordAvg(sef):
+    def getNextWordAvg(self):
         return self._nextWordsAvg

@@ -1,18 +1,16 @@
-def parseText(fileName):
+def parseText(path):
     parsedText = []
-    text = _readFile(fileName)
+    text = _readFile(path)
     rawParsedText = text.split(" ")
 
     for i in range(0, len(rawParsedText)):
         currWord = rawParsedText[i]
-        if (chr(8217) or chr(39)) in currWord:
+        if doesWordContainsApostrophe(currWord):
             wordToAdd = []
-            print(chr(8217) in currWord)
-            if chr(8217) in currWord:
+            if isItRightSingleQuotationMark(currWord):
                 wordToAdd = currWord.split(chr(8217))
-            elif chr(39) in currWord:
+            elif isItNormalSingleQuote(currWord):
                 wordToAdd = currWord.split(chr(39))
-            print(wordToAdd)
             parsedText.append(wordToAdd[0])
             parsedText.append(chr(39))
             parsedText.append(wordToAdd[1])
@@ -33,7 +31,18 @@ def parseText(fileName):
             parsedText.append(currWord)
     return parsedText
 
+def doesWordContainsApostrophe(word):
+    return (chr(8217) or chr(39)) in word
 
-def _readFile(fileName):
-    f = open("./src/" + fileName, "r", encoding='utf-8')
+def isItRightSingleQuotationMark(word):
+    return chr(8217) in word
+
+def isItNormalSingleQuote(word):
+    return chr(39) in word
+
+def doesWordContainsDoubleQuotes(word):
+    return chr(34) in word
+
+def _readFile(path):
+    f = open(path, "r", encoding='utf-8')
     return f.read()
